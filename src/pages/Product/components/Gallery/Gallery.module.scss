@@ -1,0 +1,79 @@
+.desktopGallery {
+  display: none;
+  position: relative;
+
+  @media (min-width: 960px) {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 24px;
+  }
+
+  .imageThumbnails {
+    position: sticky;
+    align-self: start;
+    top: 0;
+    transition: 0.3s;
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      display: block;
+      margin-bottom: 12px;
+      border: 1px solid transparent;
+      &:hover {
+        border-color: black;
+      }
+    }
+  }
+
+  .imageList {
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+.imageGallery {
+  margin-bottom: 12px;
+
+  .swiper {
+    margin-bottom: 12px;
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 960px) {
+    display: none;
+  }
+
+  .swiperPagination {
+    text-align: center;
+
+    :global {
+      .swiper-pagination-bullet {
+        margin: 0 2px;
+        background: transparent;
+        border: 1px solid black;
+        height: 7px;
+        width: 7px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .swiper-pagination-bullet-active {
+        background-color: black;
+      }
+    }
+
+    @media (min-width: 960px) {
+      display: none;
+    }
+  }
+}

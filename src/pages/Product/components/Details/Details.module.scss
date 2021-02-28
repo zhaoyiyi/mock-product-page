@@ -1,0 +1,24 @@
+.collapse {
+  border-top: 1px solid #cecece;
+  &:last-of-type {
+    border-bottom: 1px solid #cecece;
+  }
+}
+
+.title {
+  padding: 12px;
+  font-size: 18px;
+  font-family: var(--font-secondary);
+}
+
+.content {
+  padding: 12px 48px 24px 12px;
+  line-height: 1.5;
+  margin: 0;
+  white-space: pre-line;
+  font-family: var(--font-secondary);
+}
+
+.details {
+  margin-left: 18px;
+}

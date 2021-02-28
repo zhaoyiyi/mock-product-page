@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  color: white;
+  background: #2b2b2b;
+}
+
+:root {
+  --font-main: 'Open Sans', sans-serif;
+  --font-secondary: 'Noto Serif', serif;
+  --nav-height: 60px;
+
+  @media (min-width: 960px) {
+    --nav-height: 70px;
+  }
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  font-family: var(--font-main);
+}
+
+body {
+  margin: 0;
+}

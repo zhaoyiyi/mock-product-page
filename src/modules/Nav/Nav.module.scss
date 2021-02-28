@@ -1,0 +1,62 @@
+.navContainer {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.alert {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.nav {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+
+  @media (min-width: 960px) {
+    padding: 0 24px;
+    height: 70px;
+  }
+
+  button,
+  a {
+    color: black;
+    text-decoration: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    font-size: 18px;
+    letter-spacing: 1.4px;
+
+    @media (min-width: 960px) {
+      font-size: 14px;
+    }
+
+    &:hover {
+      -webkit-text-stroke-width: 1.1px;
+    }
+  }
+
+  a {
+    @media (min-width: 960px) {
+      display: inline-block;
+      margin: 0 24px;
+    }
+  }
+}
+
+.mobileOnly {
+  @media (min-width: 960px) {
+    display: none;
+  }
+}
+.desktopOnly {
+  display: none;
+  @media (min-width: 960px) {
+    display: inherit;
+  }
+}
