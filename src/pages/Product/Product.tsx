@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { ColorPicker, Details, Gallery, SizeSelector } from './components';
 import classes from './Product.module.scss';
@@ -11,22 +11,25 @@ export function ProductPage(): JSX.Element {
   const [productColors, setProductColors] = useState<ProductColors>([]);
   const [selectedVariant, setSelectedVariant] = useState<null | ProductVariant>(null);
 
+  useEffect(() => {
+    if (product) {
+      console.log('product');
+      getProductColors(productSlug)
+        .then((colors) => {
+          setProductColors(colors);
+        })
+        .catch(() => {
+          // error handling
+        });
+    }
+  }, [product]);
+
   if (isLoading) {
     return <div>loading...</div>;
   }
 
   if (error || !product) {
     return <div>something went wrong...</div>;
-  }
-
-  if (product) {
-    getProductColors(productSlug)
-      .then((colors) => {
-        setProductColors(colors);
-      })
-      .catch(() => {
-        // error handling
-      });
   }
 
   return (
