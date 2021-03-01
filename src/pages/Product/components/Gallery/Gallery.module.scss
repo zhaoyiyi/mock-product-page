@@ -11,7 +11,7 @@
   .imageThumbnails {
     position: sticky;
     align-self: start;
-    top: 0;
+    top: var(--nav-height);
     transition: 0.3s;
 
     img {
